@@ -27,4 +27,6 @@ bears4 = pd.DataFrame(bearsdct4, columns = ['Student', 'ESAT'])
 
 bears5 = pd.merge(bears1, bears2)
 bears6 = pd.merge(bears5, bears3)
-bears = pd.merge(bears6, bears4)
+bearstidy = pd.merge(bears6, bears4)
+
+bearslong = pd.melt(bearstidy, id_vars = ['Student'], value_vars = ['Math', 'Electronics', 'GEAS', 'ESAT'], var_name = 'Subject', value_name = 'Grade')
